@@ -2,7 +2,7 @@
 
 RSpec.describe PsuIdentity do
   it 'has a version number' do
-    expect(PsuIdentity::VERSION).not_to be nil
+    expect(PsuIdentity::VERSION).not_to be_nil
   end
 
   specify do

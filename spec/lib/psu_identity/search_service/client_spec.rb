@@ -33,8 +33,8 @@ RSpec.describe PsuIdentity::SearchService::Client do
     end
 
     context 'with an unparsable response' do
-      let(:mock_connection) { instance_spy('Faraday::Connection') }
-      let(:mock_response) { instance_spy('Faraday::Response', body: 'this is not JSON') }
+      let(:mock_connection) { instance_spy(Faraday::Connection) }
+      let(:mock_response) { instance_spy(Faraday::Response, body: 'this is not JSON') }
       let(:result) { client.search(text: 'asdf') }
 
       before do
@@ -79,8 +79,8 @@ RSpec.describe PsuIdentity::SearchService::Client do
     end
 
     context 'with an unparsable response' do
-      let(:mock_connection) { instance_spy('Faraday::Connection') }
-      let(:mock_response) { instance_spy('Faraday::Response', body: 'this is not JSON') }
+      let(:mock_connection) { instance_spy(Faraday::Connection) }
+      let(:mock_response) { instance_spy(Faraday::Response, body: 'this is not JSON') }
       let(:results) { client.userid('asdf') }
 
       before do

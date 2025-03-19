@@ -9,7 +9,7 @@ inherit_from:
   - .niftany/style.yml
   - .rubocop_todo.yml
 
-require: [rubocop-rspec, rubocop-performance]
+plugins: [rubocop-rspec, rubocop-performance]
 
 AllCops:
   DisplayCopNames: true
@@ -26,6 +26,6 @@ Style/OpenStructUse:
     - 'lib/psu_identity/search_service/atomic_link.rb'
     - 'spec/lib/psu_identity/search_service/atomic_link_spec.rb'
 
-Rspec/NestedGroups:
+RSpec/NestedGroups:
   Exclude:
     - 'spec/lib/psu_identity/search_service/person_spec.rb'

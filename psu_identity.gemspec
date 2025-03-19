@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Gem for interfacing with psu's search-service"
   spec.homepage      = 'https://github.com/psu-libraries/psu_identity'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 3.1.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.4.0')
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -28,14 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'oauth2'
   spec.add_dependency 'rake', '>= 12.0'
 
-  spec.add_development_dependency 'pry-byebug', '~> 3.9'
-  spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rspec-its', '~> 1.3'
-  spec.add_development_dependency 'rubocop', '~> 1.28'
-  spec.add_development_dependency 'rubocop-performance', '~> 1.11'
-  spec.add_development_dependency 'rubocop-rspec', '~> 2.5'
-  spec.add_development_dependency 'simplecov', '=0.17'
-  spec.add_development_dependency 'vcr', '~> 6.1'
-  spec.add_development_dependency 'webmock', '~> 3.18'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end
