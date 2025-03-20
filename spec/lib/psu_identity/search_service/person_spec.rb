@@ -56,7 +56,7 @@ RSpec.describe PsuIdentity::SearchService::Person do
       context 'when givenName is not present' do
         subject { described_class.new }
 
-        its(:preferred_given_name) { is_expected.to eq(nil) }
+        its(:preferred_given_name) { is_expected.to be_nil }
       end
 
       context 'when givenName is present' do
@@ -70,7 +70,7 @@ RSpec.describe PsuIdentity::SearchService::Person do
       context 'when givenName is not present' do
         subject { described_class.new('preferredGivenName' => '') }
 
-        its(:preferred_given_name) { is_expected.to eq(nil) }
+        its(:preferred_given_name) { is_expected.to be_nil }
       end
 
       context 'when givenName is present' do
@@ -92,7 +92,7 @@ RSpec.describe PsuIdentity::SearchService::Person do
       context 'when middleName is not present' do
         subject { described_class.new }
 
-        its(:preferred_middle_name) { is_expected.to eq(nil) }
+        its(:preferred_middle_name) { is_expected.to be_nil }
       end
 
       context 'when middleName is present' do
@@ -106,7 +106,7 @@ RSpec.describe PsuIdentity::SearchService::Person do
       context 'when middleName is not present' do
         subject { described_class.new('preferredMiddleName' => '') }
 
-        its(:preferred_middle_name) { is_expected.to eq(nil) }
+        its(:preferred_middle_name) { is_expected.to be_nil }
       end
 
       context 'when middleName is present' do
@@ -128,7 +128,7 @@ RSpec.describe PsuIdentity::SearchService::Person do
       context 'when familyName is not present' do
         subject { described_class.new }
 
-        its(:preferred_family_name) { is_expected.to eq(nil) }
+        its(:preferred_family_name) { is_expected.to be_nil }
       end
 
       context 'when familyName is present' do
@@ -142,7 +142,7 @@ RSpec.describe PsuIdentity::SearchService::Person do
       context 'when familyName is not present' do
         subject { described_class.new('preferredFamilyName' => '') }
 
-        its(:preferred_family_name) { is_expected.to eq(nil) }
+        its(:preferred_family_name) { is_expected.to be_nil }
       end
 
       context 'when familyName is present' do
@@ -164,7 +164,7 @@ RSpec.describe PsuIdentity::SearchService::Person do
       context 'when honorificSuffix is not present' do
         subject { described_class.new }
 
-        its(:preferred_honorific_suffix) { is_expected.to eq(nil) }
+        its(:preferred_honorific_suffix) { is_expected.to be_nil }
       end
 
       context 'when honorificSuffix is present' do
@@ -178,7 +178,7 @@ RSpec.describe PsuIdentity::SearchService::Person do
       context 'when honorificSuffix is not present' do
         subject { described_class.new('preferredHonorificSuffix' => '') }
 
-        its(:preferred_honorific_suffix) { is_expected.to eq(nil) }
+        its(:preferred_honorific_suffix) { is_expected.to be_nil }
       end
 
       context 'when honorificSuffix is present' do

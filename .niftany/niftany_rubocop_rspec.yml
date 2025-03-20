@@ -1,5 +1,5 @@
 ---
-require: rubocop-rspec
+plugins: rubocop-rspec
 
 Layout/MultilineBlockLayout:
   Exclude:
@@ -26,7 +26,10 @@ RSpec/ExampleWording:
   IgnoredWords:
     - only
 
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
+  Enabled: false
+  
+RSpec/SpecFilePathSuffix:
   Enabled: false
 
 RSpec/InstanceVariable:
