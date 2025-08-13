@@ -1,29 +1,22 @@
 # frozen_string_literal: true
 
-# @abstract Client for querying Penn State's identity API: https://identity.apps.psu.edu/search-service/resources
+# @abstract Client for querying Penn State's identity API: https://search-service.k8s.psu.edu/
 module PsuIdentity::SearchService
   class Error < StandardError; end
 
   class NotFound < StandardError; end
 
   class Client
-    attr_reader :base_url
-
-    # @param [String] base_url
-    def initialize(base_url: '/search-service/resources')
-      @base_url = base_url
-    end
-
     # @param [Hash] args of options to pass to the endpoint
     # @option args [String] :text to search for
     def search(**args)
-      process_response connection.get("#{base_url}/people", args)
+      process_response connection.get('/people', args)
     end
 
     # @param [Hash] args of options to pass to the endpoint
     # @option args [String] :userid of the person
     def userid(userid)
-      process_userid_response connection.get("#{base_url}/people/userid/#{userid}")
+      process_userid_response connection.get("/people/userid/#{userid}")
     end
 
     private
@@ -54,7 +47,7 @@ module PsuIdentity::SearchService
       end
 
       def endpoint
-        @endpoint ||= ENV.fetch('IDENTITY_ENDPOINT', 'https://identity.apps.psu.edu')
+        @endpoint ||= ENV.fetch('IDENTITY_ENDPOINT', 'https://search-service.k8s.psu.edu')
       end
   end
 end

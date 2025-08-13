@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://identity.apps.psu.edu/search-service/resources/people/userid/cam156
+    uri: https://search-service.k8s.psu.edu/people/userid/cam156
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,31 +19,24 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Tue, 25 Jan 2022 13:53:33 GMT
+      - Wed, 13 Aug 2025 13:05:03 GMT
       Content-Type:
-      - application/vnd-psu.edu-v1+json
+      - application/json
       Content-Length:
-      - '119'
+      - '117'
       Connection:
       - keep-alive
-      X-Content-Security-Policy:
-      - frame-ancestors 'none'
-      Set-Cookie:
-      - JSESSIONID=m7Hsk8EAY7FuoEL6QuIiglkUKVQIzv1C8znJnHW6.search-service-7687876fb-cjnhk;
-        path=/search-service
-      X-Request-Id:
-      - 8381103af2b0c6750ef722de0b27c0c7
-      X-Frame-Options:
-      - DENY
-      Content-Security-Policy:
-      - frame-ancestors 'none'
-      Uniqueid:
-      - 8381103af2b0c6750ef722de0b27c0c7
+      Vary:
+      - Origin
       Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - 774219acf15ab71949e6bd6f88107eef
     body:
       encoding: UTF-8
-      string: '{"status":{"code":404,"message":"NOT_FOUND"},"errorMessage":["No person
-        matched the input userid: cam156"],"link":null}'
-  recorded_at: Tue, 25 Jan 2022 13:53:33 GMT
-recorded_with: VCR 6.0.0
+      string: '{"status":{"code":404,"message":""},"errorMessage":["Response Error
+        [404]: user not found:  User cam156 not found"]}
+
+        '
+  recorded_at: Wed, 13 Aug 2025 13:05:00 GMT
+recorded_with: VCR 6.3.1

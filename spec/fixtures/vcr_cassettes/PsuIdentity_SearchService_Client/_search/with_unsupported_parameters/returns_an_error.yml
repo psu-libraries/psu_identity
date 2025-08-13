@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://search-service.k8s.psu.edu/people/userid/
+    uri: https://search-service.k8s.psu.edu/people?bogus=bam
     body:
       encoding: US-ASCII
       string: ''
@@ -15,15 +15,15 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 400
+      message: Bad Request
     headers:
       Date:
-      - Wed, 13 Aug 2025 13:07:51 GMT
+      - Wed, 13 Aug 2025 13:25:15 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '69'
+      - '146'
       Connection:
       - keep-alive
       Vary:
@@ -31,11 +31,12 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Request-Id:
-      - 4b8742db8cf68be153a1daff37bb6e82
+      - ecb402207535b0207011f50bbe915eeb
     body:
       encoding: UTF-8
-      string: '{"status":{"code":401,"message":""},"errorMessage":["Unauthorized"]}
+      string: '{"status":{"code":400,"message":""},"errorMessage":["Response Error
+        [400]: Invalid search string:  search string must be at least 3 characters"]}
 
         '
-  recorded_at: Wed, 13 Aug 2025 13:07:48 GMT
+  recorded_at: Wed, 13 Aug 2025 13:25:13 GMT
 recorded_with: VCR 6.3.1

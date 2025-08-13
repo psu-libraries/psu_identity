@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://search-service.k8s.psu.edu/people/userid/
+    uri: https://search-service.k8s.psu.edu/people?text=bam!
     body:
       encoding: US-ASCII
       string: ''
@@ -15,15 +15,15 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 500
+      message: Internal Server Error
     headers:
       Date:
-      - Wed, 13 Aug 2025 13:07:51 GMT
+      - Wed, 13 Aug 2025 13:27:09 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '69'
+      - '121'
       Connection:
       - keep-alive
       Vary:
@@ -31,11 +31,12 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Request-Id:
-      - 4b8742db8cf68be153a1daff37bb6e82
+      - 187a35dae14e3b062727e328920250cf
     body:
       encoding: UTF-8
-      string: '{"status":{"code":401,"message":""},"errorMessage":["Unauthorized"]}
+      string: '{"status":{"code":500,"message":"Error searching for users"},"errorMessage":["pq:
+        syntax error in tsquery: \"bam!:*\""]}
 
         '
-  recorded_at: Wed, 13 Aug 2025 13:07:48 GMT
+  recorded_at: Wed, 13 Aug 2025 13:27:07 GMT
 recorded_with: VCR 6.3.1

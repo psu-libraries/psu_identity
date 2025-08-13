@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://identity.apps.psu.edu/search-service/resources/people/userid/agw13
+    uri: https://search-service.k8s.psu.edu/people/userid/ajk5603
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,32 +19,24 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 07 Oct 2021 14:29:15 GMT
+      - Wed, 13 Aug 2025 13:05:02 GMT
       Content-Type:
-      - application/vnd-psu.edu-v1+json
+      - application/json
       Content-Length:
-      - '357'
+      - '563'
       Connection:
       - keep-alive
-      X-Content-Security-Policy:
-      - frame-ancestors 'none'
-      Set-Cookie:
-      - JSESSIONID=8b7Lh0IyQZp2D00itwDphoQwcxuzpSzvw88NOyYd.search-service-7fb749d9-tcl7b;
-        path=/search-service
-      X-Request-Id:
-      - bb6d4e331ee4ba67f6242bcbce835b19
-      X-Frame-Options:
-      - DENY
-      Content-Security-Policy:
-      - frame-ancestors 'none'
-      Uniqueid:
-      - fbcf21c7-69ad-4af7-b9e4-04d45dbdd774
+      Vary:
+      - Origin
       Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - d17b131a96789a9c0dd4c889987d147d
     body:
       encoding: UTF-8
-      string: '{"userid":"agw13","cprid":"2784093","givenName":"Adam","middleName":"Garner","familyName":"Wead","preferredGivenName":"Adam","preferredFamilyName":"Wead","active":true,"confHold":false,"universityEmail":"agw13@psu.edu","serviceAccount":false,"affiliation":["STAFF"],"displayName":"Adam
-        Wead","link":{"href":"https://dev.apps.psu.edu/cpr/resources/2784093"}}'
-    http_version:
-  recorded_at: Thu, 07 Oct 2021 14:29:17 GMT
-recorded_with: VCR 5.1.0
+      string: '{"userid":"ajk5603","cprid":"2460424","givenName":"Alexander","middleName":"","familyName":"Kiessling","honorificPrefix":"","honorificSuffix":"","preferredGivenName":"Alex","preferredMiddleName":"","preferredFamilyName":"Kiessling","preferredHonorificPrefix":"","preferredHonorificSuffix":"","active":true,"confHold":false,"universityEmail":"ajk5603@psu.edu","otherEmail":"","serviceAccount":false,"primaryAffiliation":"STAFF","affiliation":["STAFF"],"altUserids":[],"link":{"href":"https://cpr.k8s.psu.edu/cpr/resources/2460424"},"displayName":"Alex
+        Kiessling"}
+
+        '
+  recorded_at: Wed, 13 Aug 2025 13:05:00 GMT
+recorded_with: VCR 6.3.1

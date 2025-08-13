@@ -8,11 +8,11 @@ RSpec.describe PsuIdentity::SearchService::Client do
 
   describe '#search', :vcr do
     context 'with a sucessful result' do
-      let(:results) { client.search(text: 'wead') }
+      let(:results) { client.search(text: 'kiessling') }
 
       it 'returns a first and last name' do
-        expect(results.map(&:given_name)).to include('Adam')
-        expect(results.map(&:family_name)).to include('Wead')
+        expect(results.map(&:given_name)).to include('Alexander')
+        expect(results.map(&:family_name)).to include('Kiessling')
       end
     end
 
@@ -25,10 +25,28 @@ RSpec.describe PsuIdentity::SearchService::Client do
     end
 
     context 'with unsupported parameters' do
-      let(:result) { client.search(bogus: 'bam!') }
+      let(:result) { client.search(bogus: 'bam') }
 
-      it 'returns an empty set' do
-        expect(result).to be_empty
+      it 'returns an error' do
+        expect {
+          result
+        }.to raise_error(
+          PsuIdentity::SearchService::Error,
+          /400/
+        )
+      end
+    end
+
+    context 'with unsupported characters' do
+      let(:result) { client.search(text: 'bam!') }
+
+      it 'returns an error' do
+        expect {
+          result
+        }.to raise_error(
+          PsuIdentity::SearchService::Error,
+          /500/
+        )
       end
     end
 
@@ -46,29 +64,15 @@ RSpec.describe PsuIdentity::SearchService::Client do
         expect(result).to be_empty
       end
     end
-
-    context 'when an error occurs with the connection' do
-      let(:client) { described_class.new(base_url: 'bad_endpoint') }
-      let(:result) { client.search(text: 'asdf') }
-
-      it 'raises an error' do
-        expect {
-          result
-        }.to raise_error(
-          PsuIdentity::SearchService::Error,
-          /404/
-        )
-      end
-    end
   end
 
   describe '#userid', :vcr do
     context 'when the person exists at Penn State' do
-      let(:results) { client.userid('agw13') }
+      let(:results) { client.userid('ajk5603') }
 
       it 'returns a first and last name' do
-        expect(results.given_name).to include('Adam')
-        expect(results.family_name).to include('Wead')
+        expect(results.given_name).to include('Alex')
+        expect(results.family_name).to include('Kiessling')
       end
     end
 
