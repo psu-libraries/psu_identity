@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://identity.apps.psu.edu/search-service/resources/people?text=asdf
+    uri: https://search-service.k8s.psu.edu/people?text=asdf
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,31 +19,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 07 Oct 2021 14:29:15 GMT
+      - Wed, 13 Aug 2025 13:05:02 GMT
       Content-Type:
-      - application/vnd-psu.edu-v1+json
+      - application/json
       Content-Length:
-      - '2'
+      - '3'
       Connection:
       - keep-alive
-      X-Content-Security-Policy:
-      - frame-ancestors 'none'
-      Set-Cookie:
-      - JSESSIONID=rp4Bga_dCWa-wH6NvgVCeN2PfbXDKGE0dfWtl0kc.search-service-7fb749d9-tcl7b;
-        path=/search-service
-      X-Request-Id:
-      - 8584c473bdfd91332b5e1308cfb9e989
-      X-Frame-Options:
-      - DENY
-      Content-Security-Policy:
-      - frame-ancestors 'none'
-      Uniqueid:
-      - 7c927859-461a-4538-9443-b01e99b834e7
+      Vary:
+      - Origin
       Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - fe87096de7e7d125dc3d17b1b53ae921
     body:
       encoding: UTF-8
-      string: "[]"
-    http_version:
-  recorded_at: Thu, 07 Oct 2021 14:29:16 GMT
-recorded_with: VCR 5.1.0
+      string: "[]\n"
+  recorded_at: Wed, 13 Aug 2025 13:05:00 GMT
+recorded_with: VCR 6.3.1
