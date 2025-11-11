@@ -1,6 +1,4 @@
 [![CircleCI](https://circleci.com/gh/psu-libraries/psu_identity.svg?style=svg)](https://circleci.com/gh/psu-libraries/psu_identity)
-[![Maintainability](https://api.codeclimate.com/v1/badges/4add85571dd35c111426/maintainability)](https://codeclimate.com/github/psu-libraries/psu_identity/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4add85571dd35c111426/test_coverage)](https://codeclimate.com/github/psu-libraries/psu_identity/test_coverage)
 
 # PsuIdentity
 
