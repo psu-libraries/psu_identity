@@ -25,12 +25,6 @@ jobs:
           command: bundle install
 
       - run:
-          name: Setup Code Climate test-reporter
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > bin/cc-test-reporter
-            chmod +x bin/cc-test-reporter
-
-      - run:
           name: "Rubocop"
           command: bundle exec rubocop
 
@@ -39,7 +33,5 @@ jobs:
           command: |
             export PSU_ID_OAUTH_CLIENT_ID=foo
             export PSU_ID_OAUTH_CLIENT_SECRET=bar
-            RAILS_ENV=test bundle exec rspec &&
-            bin/cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.json coverage/.resultset.json &&
-                  bin/cc-test-reporter upload-coverage
+            RAILS_ENV=test bundle exec rspec
             
