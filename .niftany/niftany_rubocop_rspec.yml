@@ -5,7 +5,7 @@ Layout/MultilineBlockLayout:
   Exclude:
     - 'spec/**/*'
 
-Naming/PredicateName:
+Naming/PredicatePrefix:
   Exclude:
     - spec/**/*
 
