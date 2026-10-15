@@ -23,10 +23,10 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'faraday', '~> 2.0'
-  spec.add_dependency 'json'
-  spec.add_dependency 'oauth2'
-  spec.add_dependency 'rake', '>= 12.0'
+  spec.add_dependency 'faraday', '~> 2.14.4'
+  spec.add_dependency 'json', '~> 3.1.0'
+  spec.add_dependency 'oauth2', '~> 2.0.25'
+  spec.add_dependency 'rake', '>= 13.4.2'
 
   spec.metadata['rubygems_mfa_required'] = 'true'
 end
