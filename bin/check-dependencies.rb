@@ -6,7 +6,7 @@ require 'json'
 result = Hash.new
 
 lines = File.readlines(File.expand_path('../psu_identity.gemspec', __dir__))
-lines = lines.each { |l| l.strip! }
+lines = lines.each(&:strip!)
 lines = lines.select { |l| l.start_with?('spec.add_dependency') }
 
 lines.each do |l|
