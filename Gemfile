@@ -6,13 +6,13 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem 'pry-byebug', '~> 3.9'
-  gem 'rspec', '~> 3.0'
-  gem 'rspec-its', '~> 1.3'
-  gem 'rubocop', '~> 1.72'
-  gem 'rubocop-performance', '~> 1.24'
-  gem 'rubocop-rspec', '~> 3.5'
+  gem 'pry-byebug', '~> 3.12'
+  gem 'rspec', '~> 3.13.2'
+  gem 'rspec-its', '~> 2.0'
+  gem 'rubocop', '~> 1.92'
+  gem 'rubocop-performance', '~> 1.27'
+  gem 'rubocop-rspec', '~> 3.10.2'
   gem 'simplecov'
-  gem 'vcr', '~> 6.1'
-  gem 'webmock', '~> 3.18'
+  gem 'vcr', '~> 6.4'
+  gem 'webmock', '~> 3.34.0'
 end
